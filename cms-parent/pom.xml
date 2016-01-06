@@ -10,7 +10,7 @@
   	<module>../cms-user</module>
   	<module>../cms-topic</module>
   	<module>../basic-common</module> -->
-  	<module>../basic-hibernate</module>
+  	<module>../../basic-hibernate/basic-hibernate</module>
   </modules>
   
   <properties>
