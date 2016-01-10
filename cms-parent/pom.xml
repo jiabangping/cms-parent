@@ -9,7 +9,7 @@
 	<modules>
 		<!-- <module>../cms-core</module> <module>../cms-user</module> <module>../cms-topic</module> 
 			<module>../basic-common</module> -->
-		<module>../basic-hibernate</module>
+		<module>../../basic-hibernate/basic-hibernate</module>
 	</modules>
  
 	<properties>
@@ -285,4 +285,29 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+	
+<!-- 为了部署构建到nexus中，settings.xml中需配置的用户认证
+<servers>
+	<server>
+      <id>hosted releases</id>
+      <username>deployment</username>
+      <password>deployment123</password>
+    </server>
+	 <server>
+      <id>hosted snapshots</id>
+      <username>deployment</username>
+      <password>deployment123</password>
+    </server>
+</servers>-->
+	<!-- 部署构建至 nexus 使用mvn deploy 部署-->
+	<distributionManagement>
+		<repository>
+			<id>hosted releases</id>
+			<url>http://localhost:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>hosted snapshots</id>
+			<url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
